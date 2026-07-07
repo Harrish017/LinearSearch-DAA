@@ -1,0 +1,2 @@
+# LinearSearch-DAA
+Linearsearch
