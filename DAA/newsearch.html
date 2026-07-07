@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linear Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 8px;
+            width: 300px;
+        }
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Linear Search</h2>
+
+    <label>Enter array elements (comma separated):</label><br>
+    <input type="text" id="arrayInput" placeholder="e.g. 10,20,30,40,50"><br>
+
+    <label>Enter element to search:</label><br>
+    <input type="number" id="searchElement" placeholder="e.g. 30"><br>
+
+    <button onclick="linearSearch()">Search</button>
+
+    <p id="result"></p>
+
+    <script>
+        function linearSearch() {
+            let arr = document.getElementById("arrayInput").value
+                        .split(",")
+                        .map(Number);
+
+            let key = Number(document.getElementById("searchElement").value);
+
+            let found = false;
+            let position = -1;
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === key) {
+                    found = true;
+                    position = i;
+                    break;
+                }
+            }
+
+            if (found) {
+                document.getElementById("result").innerHTML =
+                    "Element found at index: " + position;
+            } else {
+                document.getElementById("result").innerHTML =
+                    "Element not found.";
+            }
+        }
+    </script>
+
+</body>
+</html>
